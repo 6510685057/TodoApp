@@ -33,6 +33,12 @@ struct LoginView: View {
                     NavigationLink(
                         "Create an Account", destination: RegisterView())
                 }
+                .alert(isPresented: $viewModel.isError) {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text("Invalid Credential")
+                    )
+                }
             }
         }
     }
